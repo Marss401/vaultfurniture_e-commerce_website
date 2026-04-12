@@ -15,10 +15,10 @@ if (isset($_POST['action'])) {
     $category = $_POST['category'];
     $users_id = $_SESSION['id'];
 
-    // default image (for edit case)
+    // default image 
     $image_name = isset($_POST['old_image']) ? $_POST['old_image'] : null;
 
-    // if a new image is uploaded
+    // if a new image is uploaded (for edit case)
     if (isset($_FILES['image']) && $_FILES['image']['name'] != "") {
 
         $image = $_FILES['image'];
@@ -57,7 +57,6 @@ if (isset($_POST['action'])) {
 
             echo json_encode(['error' => false, 'message' => 'New Product created']);
         }
-
     } catch (\Throwable $th) {
         echo json_encode(['error' => true, 'message' => "Unable to save Product. $th"]);
     }

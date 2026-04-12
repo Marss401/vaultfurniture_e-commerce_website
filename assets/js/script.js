@@ -144,7 +144,7 @@ $(function () {
   $("#productForm").on("submit", function () {
     const form = this;
     const button = $(this).find("button");
-    const buttonText = button.val();
+    const buttonText = button.text();
 
     $.ajax({
       type: "POST",
@@ -154,11 +154,11 @@ $(function () {
       cache: false,
       data: new FormData(form),
       beforeSend: () => {
-        button.val("Processing...");
+        button.text("Processing...");
         button.attr("disabled", true);
       },
       success: (res) => {
-        button.val(buttonText);
+        button.text(buttonText);
         button.removeAttr("disabled");
         const data = JSON.parse(res);
         swal(data.message, { icon: data.error ? "error" : "success" });
@@ -385,8 +385,8 @@ $(function () {
       data: { category_id: category },
       success: function (res) {
         $("#products-container").html(res);
-        console.log(category);
-        loadProducts(true);
+        // console.log(category);
+        // loadProducts(true);
       },
     });
   });
@@ -626,6 +626,8 @@ $(function () {
         return false;
     })
 });
+
+
 
 // Handle Cart Change
 function handleCartChange(input, id) {

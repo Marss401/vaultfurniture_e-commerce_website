@@ -94,8 +94,13 @@ _HTML;
             <input type="hidden" name="id" id="categoryId">
             <input type="hidden" name="action" id="categoryAction" value="create">
             <input type="hidden" name="trigger_category_create" value="1">
-            <div class="relative"> <label for="name" class="text-xs font-semibold text-slate-400">Category Name</label> <input required type="text" name="name" id="name" placeholder="Name e.g. Table" class="py-2 px-4 rounded-md border border-slate-300 w-full text-slate-600 text-sm"> </div>
-            <button type="submit" class="py-1 px-4 bg-slate-900 rounded-md text-primary cursor-pointer flex items-center gap-2" id="saveBtn"><i class="fa-solid fa-download"></i><span class="-mt-1">Save Record</span></button>
+            <div class="relative"> 
+                <label for="name" class="text-xs font-semibold text-slate-400">Category Name</label> 
+                <input required type="text" name="name" id="name" placeholder="Name e.g. Table" class="py-2 px-4 rounded-md border border-slate-300 w-full text-slate-600 text-sm"> 
+            </div>
+            <button type="submit" class="py-1 px-4 bg-slate-900 rounded-md text-primary cursor-pointer flex items-center gap-2" id="saveBtn"><i class="fa-solid fa-download"></i>
+                <span class="-mt-1">Save Record</span>
+            </button>
         </form>
     </section>
 </dialog>

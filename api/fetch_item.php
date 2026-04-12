@@ -4,7 +4,7 @@ $folder = $_SERVER[ 'DOCUMENT_ROOT' ] . '/vaultfurniture';
 require_once( "$folder/config/db.php" );
 $table = 'products';
 
-$category_id = $_POST['category_id'];
+$category_id = $_POST['category_id'] ?? 'all';
 
 if ($category_id == "all") {
     $category_query = "SELECT id, image, name, price FROM $table WHERE status = 'Available' ORDER BY RAND() LIMIT 6";
